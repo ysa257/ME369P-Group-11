@@ -9,6 +9,18 @@ See https://pypi.org/project/face_recognition/    discription for the functions 
 4. Add motion sensor, led, buzzer...
 
 Syetem Structure:
-once motion detected/touch sensed/infrad sensed, camera begins to work and detect whether you are the houseowner(s)
-if not: Buzzer alarming/send live viedos to the labtop(using ssh)
-else: Unlock the door (Since we don't have an actual door here, we will use LED_ON as openning the door)
+once motion detected/touch sensed/infrad sensed, camera begins to work and detect whether you are the houseowner(s) for 10 secs
+if detected:
+   if yes:
+      open the door(LED on for 2 secs)
+   if not: 
+      Buzzer alarming/send live viedos to the labtop(using ssh)
+else: 
+   camera closed and another LED on to indicate that no face detected
+
+(Since we don't have an actual door here, we will use LED_ON as openning the door)
+
+Problem:
+1. Our camera can only deteced 2D picture, so people can use houseowner's photo to unlock the door...
+2. Camera's viedo/picture sent to raspberry pi has a delay around 2 secs (but tiny delay for recognition)
+3. It takes 10-20 secs to open the camera
