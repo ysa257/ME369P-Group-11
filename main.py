@@ -64,7 +64,7 @@ def send_an_email(picture):
         s.ehlo()
         s.starttls()
         s.ehlo()
-        s.login(user = 'kmrussell98@gmail.com', password= 'gp!0z3ro') 
+        s.login(user = 'kmrussell98@gmail.com', password= '*********') 
         s.sendmail(from_add, to_add, msg.as_string())
     except SMTPException as error:
         print('Error')
