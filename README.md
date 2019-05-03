@@ -8,6 +8,13 @@ See https://pypi.org/project/face_recognition/    discription for the functions 
 3. Run the example code on github(facial_recognition)
 4. Add motion sensor, led, buzzer...
 
+Program Capabilities:
+1.*Not finished yet but hopefully use distance sensor to detect if coming or leaving
+2. Open camera and record video
+3. Real-time facial recognition between stored photo and camera
+4. a)If a stranger is detected it will email a picture to the homeowner
+   b) If homeowner is detected unlock the door for 2 seconds
+   
 Syetem Structure:
 once motion detected/touch sensed/infrad sensed, camera begins to work and detect whether you are the houseowner(s) for 10 secs
 if detected:
