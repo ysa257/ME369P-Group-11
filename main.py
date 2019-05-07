@@ -16,6 +16,30 @@ green = gpiozero.LED(17)
 red = gpiozero.LED(21)
 touch_sensor = gpiozero.Button(19)
 
+#
+
+#sensor = DistanceSensor(23, 24, max_distance=3)
+#
+##initialize distance and difference lists
+#distances=[]
+#diff=[]
+#
+##if the distance sensor detects an object then start doing things
+##take 40 samples at 10 samples/second-record for 4 seconds
+#n=40
+#for i in range(n):
+#    distances.append(sensor.distance)
+#    sleep(0.1)
+#
+##loop through distances list to create diff list (difference btw elements)
+#for num, distance in enumerate(distances):
+#    if num < len(distances)-1:
+#        difference=distances[num+1]-distances[num]
+#        diff.append(difference)
+#
+##
+
+
 #touch sensor function
 def sensor_is_touched():
     if touch_sensor.is_pressed: return False
@@ -32,7 +56,7 @@ def match_control_led(list_of_matches):
     if flag:
         red.off()
         green.on()
-        time.sleep(1)
+        time.sleep(5)
         green.off()
         return 1
     else:
@@ -40,7 +64,7 @@ def match_control_led(list_of_matches):
     
 #function for sending an email
 def send_an_email(picture):
-    to_add = 'kmrussell98@gmail.com'
+    to_add = 'kayla.m.russell@gmail.com'
     from_add = 'kmrussell98@gmail.com'
     subject='Home Security Warning'
 
@@ -51,7 +75,7 @@ def send_an_email(picture):
     msg['To'] = to_add
     msg.preamble = 'test'
     
-    #add the picture to an email
+    #add the video to an email
     part=MIMEBase('application', 'octet-stream')
     part.set_payload(open(picture, 'rb').read())
     encoders.encode_base64(part)
@@ -64,7 +88,7 @@ def send_an_email(picture):
         s.ehlo()
         s.starttls()
         s.ehlo()
-        s.login(user = 'kmrussell98@gmail.com', password= '*********') 
+        s.login(user = 'kmrussell98@gmail.com', password= 'gp!0z3ro') 
         s.sendmail(from_add, to_add, msg.as_string())
     except SMTPException as error:
         print('Error')
@@ -72,9 +96,6 @@ def send_an_email(picture):
 
 # Get a reference to webcam #0 (the default one)
 video_capture = cv2.VideoCapture(0)
-# Load a sample picture and learn how to recognize it.
-zjc_image = face_recognition.load_image_file("zjc2.jpg")
-zjc_face_encoding = face_recognition.face_encodings(zjc_image)[0]
 
 # Load a second sample picture and learn how to recognize it.
 kmr_image = face_recognition.load_image_file("kmr3.jpg")
@@ -82,11 +103,9 @@ kmr_face_encoding = face_recognition.face_encodings(kmr_image)[0]
 
 # Create arrays of known face encodings and their names
 known_face_encodings = [
-    zjc_face_encoding,
     kmr_face_encoding
 ]
 known_face_names = [
-    "Joe",
     "Kayla"
 ]
 
@@ -97,7 +116,7 @@ face_names = []
 process_this_frame = True
 
 while True:
-    print("No one touch me")
+#    print("No one touch me")
     owner_detected = 0
     if sensor_is_touched():
         count=0 #initialize for sending emails
