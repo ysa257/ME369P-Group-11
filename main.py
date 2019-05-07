@@ -51,7 +51,7 @@ def send_an_email(picture):
     msg['To'] = to_add
     msg.preamble = 'test'
     
-    #add the video to an email
+    #add the picture to an email
     part=MIMEBase('application', 'octet-stream')
     part.set_payload(open(picture, 'rb').read())
     encoders.encode_base64(part)
