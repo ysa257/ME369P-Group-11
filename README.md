@@ -13,7 +13,7 @@ When there's no one touching the sensor, the touch sensor is always running to w
 Once touch sensed, camera begins to work and detect whether you are the houseowner(s) for 30 secs
 if detected: \
    - if the houseowners: \
-     -- unlock the door(greed LED on for 5 secs) \
+     -- unlock the door(greed LED on for 5 secs) 
    - if strangers:  \
       -- red LED on \
       -- send a photo of the stranger to houseowners' e-mail \
