@@ -4,7 +4,7 @@
 1. Open camera and record video
 2. Real-time facial recognition between stored photo and camera
 3. a) If a stranger is detected it will alarm and email a picture to the homeowner \
-   b) If homeowner is detected, unlock the door \
+   b) If homeowner is detected, unlock the door 
 ## Syetem Structure:
 Note: Since we don't have a real door, we will use green LED turned on as unlocking the door and red LED on as alarming.
 
@@ -85,7 +85,7 @@ else:                                                      #No face detected wit
       cd build \
       cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON -D OPENCV_EXTRA_MODULES_PATH=/home/pi/Downloads/opencv_contrib-3.4.0/modules -D BUILD_EXAMPLES=ON -D WITH_LIBV4L=ON PYTHON3_EXECUTABLE=/usr/bin/python3.5 PYTHON_INCLUDE_DIR=/usr/include/python3.5 PYTHON_LIBRARY=/usr/lib/arm-linux-gnueabihf/libpython3.5m.so PYTHON3_NUMPY_INCLUDE_DIRS=/home/pi/.local/lib/python3.5/site-packages/numpy/core/include .. \
       cd /home/pi/Downloads/opencv-3.4.0/build \
-      make \
+      make 
 
 Note: Before installing dlib & opencv, we need to increase swap file size to 1024 and expand filesystem first. \
 
