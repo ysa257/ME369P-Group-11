@@ -11,7 +11,7 @@ from email.utils import formatdate
 from email import encoders
 
 #set up LEDs and sensor
-#green is homeowner and red is not homewowner
+#green is homeowner and red is not homeowner
 green = gpiozero.LED(17) 
 red = gpiozero.LED(21)
 touch_sensor = gpiozero.Button(19)
