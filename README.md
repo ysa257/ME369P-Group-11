@@ -59,7 +59,7 @@ else:                                                      #No face detected wit
    ----------install numpy----------- 
    $sudo pip3 install numpy
    ----------install opencv----------- 
-Install necessary libs for opencv
+1. Install necessary libs for opencv
    $sudo apt-get install build-essential git cmake pkg-config -y
    $sudo apt-get install libjpeg8-dev -y
    $sudo apt-get install libtiff5-dev -y
@@ -69,17 +69,17 @@ Install necessary libs for opencv
    $sudo apt-get install libgtk2.0-dev -y
    $sudo apt-get install libatlas-base-dev gfortran -y
 
-Download opencv
+2. Download opencv
    $cd /home/pi/Downloads
    $wget https://github.com/Itseez/opencv/archive/3.4.0.zip
    $wget https://github.com/Itseez/opencv_contrib/archive/3.4.0.zip
 
-Unzip 
+3. Unzip 
    $cd /home/pi/Downloads
    $unzip opencv-3.4.0.zip
    $unzip opencv_contrib-3.4.0.zip
 
-Compile
+4. Compile
    $cd /home/pi/Downloads/opencv-3.4.0
    $mkdir build
    $cd build
