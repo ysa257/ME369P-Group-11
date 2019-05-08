@@ -18,7 +18,7 @@ if detected: \
       -- send a photo of the stranger to houseowners' e-mail \
 No face detected within 30 secs \
 else: \                                                     
-   - camera stop running                                     
+   -- camera stop running                                     
 ## 1. Test the camera whether it works 
    $vcgencmd get_camera \
    #if supported = 1 detected = 1: camera connected successfully \
