@@ -16,27 +16,6 @@ green = gpiozero.LED(17)
 red = gpiozero.LED(21)
 touch_sensor = gpiozero.Button(19)
 
-#sensor = DistanceSensor(23, 24, max_distance=3)
-##initialize distance and difference lists
-#distances=[]
-#diff=[]
-#
-##if the distance sensor detects an object then start doing things
-##take 40 samples at 10 samples/second-record for 4 seconds
-#n=40
-#for i in range(n):
-#    distances.append(sensor.distance)
-#    sleep(0.1)
-#
-##loop through distances list to create diff list (difference btw elements)
-#for num, distance in enumerate(distances):
-#    if num < len(distances)-1:
-#        difference=distances[num+1]-distances[num]
-#        diff.append(difference)
-#
-##
-
-
 #touch sensor function
 def sensor_is_touched():
     if touch_sensor.is_pressed: return False
