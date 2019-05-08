@@ -10,8 +10,8 @@
 Note: Since we don't have a real door, we will use green LED turned on as unlocking the door and red LED on as locking.
 
 When there's no one touching the sensor, the touch sensor is always running to wait for a touch
-Once touch sensed, camera begins to work and detect whether you are the houseowner(s) for 30 secs
-if detected: \
+Once touch sensed, camera begins to work and detect whether you are the houseowner(s) for 30 secs \
+if detected: 
    - if the houseowners: \
      -- unlock the door(greed LED on for 5 secs) 
    - if strangers:  \
