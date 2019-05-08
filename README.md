@@ -97,6 +97,8 @@ Program Capabilities:
    b) If homeowner is detected unlock the door for 2 seconds
    
 Syetem Structure:
+Note: Since we don't have a real door, we will use green LED turned on as unlocking the door and red LED on as alarming.
+
 Once touch sensed, camera begins to work and detect whether you are the houseowner(s) for 30 secs
 if detected:
    if the houseowners:
@@ -104,14 +106,6 @@ if detected:
    if strangers: 
       red LED on
       send a photo of the stranger to houseowners' e-mail
-else: 
-   camera closed and another LED on to indicate that no face detected
+else:            # No face detected within 30 secs
+   camera stop running
 
-(Since we don't have an actual door here, we will use LED_ON as openning the door)
-
-Problem:
-1. Our camera can only deteced 2D picture, so people can use houseowner's photo to unlock the door...
-2. Camera's viedo/picture sent to raspberry pi has a delay around 2 secs (but tiny delay for recognition)
-3. It takes 10-20 secs to open the camera
-4. We need around 2 minites to analyze and learn the two photos stored after we run the code.(initializing time are a bit long)
-5. Sometimes it recognize other people as the houseowner: need to change some parameters to let it be more accurate: OK, now I think it just cannot recognize Asians well...
