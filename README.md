@@ -58,7 +58,7 @@ else:                                                      #No face detected wit
       sudo python3 setup.py install --compiler-flags "-mfpu=neon" 
    4. install numpy \
       sudo pip3 install numpy 
-   5. install opencv \
+   5. install opencv 
 1. Install necessary libs for opencv \
       sudo apt-get install build-essential git cmake pkg-config -y \
       sudo apt-get install libjpeg8-dev -y \
