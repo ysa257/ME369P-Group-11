@@ -11,7 +11,7 @@ if supported = 1 detected = 1: camera connected successfully
 Use the following code to take a photo named "image.jpg" and saved in "/pi/home"
 $raspistill -o image.jpg
 
-2. Download dlib, opencv, facial_recognition, numpy libraries
+2. Install dlib, opencv, facial_recognition, numpy
 ---------- install necessary libs for dlib, opencv ----------- 
    $sudo apt-get update
    $sudo apt-get install build-essential \
@@ -44,7 +44,7 @@ $raspistill -o image.jpg
    $cd ./dlib
    $sudo python3 setup.py install --compiler-flags "-mfpu=neon"
 
-Or refer to: https://www.pyimagesearch.com/2017/05/01/install-dlib-raspberry-pi/
+https://www.pyimagesearch.com/2017/05/01/install-dlib-raspberry-pi/
 
 ----------install numpy----------- 
 $sudo pip3 install numpy
@@ -79,20 +79,15 @@ $sudo pip3 install numpy
    $make
    
 ---------------------- 
-
-Referece: https://www.jianshu.com/p/56929416b4a1
-
-
-
 Note: Before installing dlib & opencv, we need to increase swap file size to 1024 and expand filesystem first.
 
-
-
-
-
+Referece: 
+https://www.jianshu.com/p/56929416b4a1
+https://www.pyimagesearch.com/2017/05/01/install-dlib-raspberry-pi/
+https://blog.csdn.net/imdyf/article/details/81262488
 
 3. Run the example code on github(facial_recognition)
-4. Add motion sensor, led, buzzer...
+4. Add touch sensor, LED and connect wires
 
 Program Capabilities:
 1.*Not finished yet but hopefully use distance sensor to detect if coming or leaving
@@ -102,12 +97,13 @@ Program Capabilities:
    b) If homeowner is detected unlock the door for 2 seconds
    
 Syetem Structure:
-once motion detected/touch sensed/infrad sensed, camera begins to work and detect whether you are the houseowner(s) for 10 secs
+Once touch sensed, camera begins to work and detect whether you are the houseowner(s) for 30 secs
 if detected:
-   if yes:
-      open the door(LED on for 2 secs)
-   if not: 
-      Buzzer alarming/send live viedos to the labtop(using ssh)
+   if the houseowners:
+      unlock the door(greed LED on for 5 secs)
+   if strangers: 
+      red LED on
+      send a photo of the stranger to houseowners' e-mail
 else: 
    camera closed and another LED on to indicate that no face detected
 
