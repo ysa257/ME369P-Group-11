@@ -3,26 +3,26 @@
 ## Program Capabilities:
 1. Open camera and record video
 2. Real-time facial recognition between stored photo and camera
-3. a) If a stranger is detected it will alarm and email a picture to the homeowner
-   b) If homeowner is detected, unlock the door
+3. a) If a stranger is detected it will alarm and email a picture to the homeowner \
+   b) If homeowner is detected, unlock the door \
 ## Syetem Structure:
 Note: Since we don't have a real door, we will use green LED turned on as unlocking the door and red LED on as alarming.
 
 When there's no one touching the sensor, the touch sensor is always running to wait for a touch
 Once touch sensed, camera begins to work and detect whether you are the houseowner(s) for 30 secs
-if detected:
-   if the houseowners:
-      unlock the door(greed LED on for 5 secs)
-   if strangers: 
-      red LED on
-      send a photo of the stranger to houseowners' e-mail
-else:                                                      #No face detected within 30 secs
-   camera stop running                                     #To save energy and increase running speed
-## 1. Test the camera whether it works
-   $vcgencmd get_camera
-   #if supported = 1 detected = 1: camera connected successfully
-   $raspistill -o image.jpg
-   #Take a photo named "image.jpg" and saved in "/pi/home"
+if detected: \
+   if the houseowners: \
+      unlock the door(greed LED on for 5 secs) \
+   if strangers:  \
+      red LED on \
+      send a photo of the stranger to houseowners' e-mail \
+else:                                                      #No face detected within 30 secs \
+   camera stop running                                     #To save energy and increase running speed \
+## 1. Test the camera whether it works \
+   $vcgencmd get_camera \
+   #if supported = 1 detected = 1: camera connected successfully \
+   $raspistill -o image.jpg \
+   #Take a photo named "image.jpg" and saved in "/pi/home" \
 
 ## 2. Install dlib, opencv, facial_recognition, numpy
    1. Install necessary libs for dlib, opencv \
@@ -87,8 +87,7 @@ else:                                                      #No face detected wit
       cd /home/pi/Downloads/opencv-3.4.0/build \
       make \
 
----------------------- 
-Note: Before installing dlib & opencv, we need to increase swap file size to 1024 and expand filesystem first.
+Note: Before installing dlib & opencv, we need to increase swap file size to 1024 and expand filesystem first. \
 
 ## 3. Run the example code on github(facial_recognition)
 ## 4. Add touch sensor, LED and connect wires
