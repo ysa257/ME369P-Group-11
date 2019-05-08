@@ -28,7 +28,7 @@ else:                                                      #No face detected wit
    1. Install necessary libs for dlib, opencv
    
       $sudo apt-get update
-      $sudo apt-get install build-essential \
+       sudo apt-get install build-essential \
        cmake \
        gfortran \
        git \
