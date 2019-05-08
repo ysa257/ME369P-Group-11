@@ -17,12 +17,12 @@ if detected: \
       red LED on \
       send a photo of the stranger to houseowners' e-mail \
 else:                                                      #No face detected within 30 secs \
-   camera stop running                                     #To save energy and increase running speed \
-## 1. Test the camera whether it works \
+   camera stop running                                     #To save energy and increase running speed 
+## 1. Test the camera whether it works 
    $vcgencmd get_camera \
    #if supported = 1 detected = 1: camera connected successfully \
    $raspistill -o image.jpg \
-   #Take a photo named "image.jpg" and saved in "/pi/home" \
+   #Take a photo named "image.jpg" and saved in "/pi/home" 
 
 ## 2. Install dlib, opencv, facial_recognition, numpy
    1. Install necessary libs for dlib, opencv \
@@ -50,14 +50,14 @@ else:                                                      #No face detected wit
        zip
    2. Install lib for raspberry camera \
       sudo apt-get install python3-picamera \
-      sudo pip3 install --upgrade picamera[array] \
+      sudo pip3 install --upgrade picamera[array] 
    3. Install dlib \
       mkdir -p dlib \
       git clone -b 'v19.6' --single-branch https://github.com/davisking/dlib.git dlib/ \
       cd ./dlib \
-      sudo python3 setup.py install --compiler-flags "-mfpu=neon" \
+      sudo python3 setup.py install --compiler-flags "-mfpu=neon" 
    4. install numpy \
-      sudo pip3 install numpy \
+      sudo pip3 install numpy 
    5. install opencv \
 1. Install necessary libs for opencv \
       sudo apt-get install build-essential git cmake pkg-config -y \
@@ -67,17 +67,17 @@ else:                                                      #No face detected wit
       sudo apt-get install libpng12-dev -y \
       sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev -y \
       sudo apt-get install libgtk2.0-dev -y \
-      sudo apt-get install libatlas-base-dev gfortran -y \
+      sudo apt-get install libatlas-base-dev gfortran -y 
 
 2. Download opencv \
       cd /home/pi/Downloads \
       wget https://github.com/Itseez/opencv/archive/3.4.0.zip \
-      wget https://github.com/Itseez/opencv_contrib/archive/3.4.0.zip \
+      wget https://github.com/Itseez/opencv_contrib/archive/3.4.0.zip 
 
 3. Unzip \
       cd /home/pi/Downloads \
       unzip opencv-3.4.0.zip \
-      unzip opencv_contrib-3.4.0.zip \
+      unzip opencv_contrib-3.4.0.zip 
 
 4. Compile \
       cd /home/pi/Downloads/opencv-3.4.0 \
