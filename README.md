@@ -94,7 +94,7 @@ Note: Before installing dlib & opencv, we need to increase swap file size to 102
 ## 4. Add touch sensor, LED and connect wires
 
 ## Referece 
-https://github.com/ageitgey/face_recognition/ for face_recognition github
-https://pypi.org/project/face_recognition/ for discription for the functions of facial_recognition libraries
-https://www.pyimagesearch.com/2017/05/01/install-dlib-raspberry-pi/ for installation for dlib
-https://www.pyimagesearch.com/2018/09/26/install-opencv-4-on-your-raspberry-pi/ for opencv installation
+1. https://github.com/ageitgey/face_recognition/ for face_recognition github
+2. https://pypi.org/project/face_recognition/ for discription for the functions of facial_recognition libraries
+3. https://www.pyimagesearch.com/2017/05/01/install-dlib-raspberry-pi/ for installation for dlib
+4. https://www.pyimagesearch.com/2018/09/26/install-opencv-4-on-your-raspberry-pi/ for opencv installation
