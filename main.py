@@ -16,10 +16,7 @@ green = gpiozero.LED(17)
 red = gpiozero.LED(21)
 touch_sensor = gpiozero.Button(19)
 
-#
-
 #sensor = DistanceSensor(23, 24, max_distance=3)
-#
 ##initialize distance and difference lists
 #distances=[]
 #diff=[]
@@ -46,6 +43,7 @@ def sensor_is_touched():
     else: return True
     
 #function to determine if homeowner    
+#if the face detected is anyone of houseowner: flag = 1 and break
 def match_control_led(list_of_matches):
     for i in range(len(list_of_matches)):
         if list_of_matches[i] == False:
@@ -94,10 +92,12 @@ def send_an_email(picture):
         print('Error')
 
 
+        
 # Get a reference to webcam #0 (the default one)
+#Open the camera
 video_capture = cv2.VideoCapture(0)
 
-# Load a second sample picture and learn how to recognize it.
+# Load Kayla's picture and learn how to recognize it, which takes around 1 min to learn at the beginning.
 kmr_image = face_recognition.load_image_file("kmr3.jpg")
 kmr_face_encoding = face_recognition.face_encodings(kmr_image)[0]
 
@@ -119,7 +119,7 @@ while True:
 #    print("No one touch me")
     owner_detected = 0
     if sensor_is_touched():
-        count=0 #initialize for sending emails
+        count=0                               #initialize for sending emails
         print("Someone Outside")
         video_capture = cv2.VideoCapture(0)   # Without this line, the camera with not able to open for the second time.
         
@@ -138,9 +138,9 @@ while True:
             ret, frame = video_capture.read()
             # add frame to the video
             #out.write(frame)
-#            if frame.all() == None:
-#                print("Error: No frame")
-#                break
+            #if frame.all() == None:
+            #   print("Error: No frame")
+            #   break
                 
             # Resize frame of video to 1/4 size for faster face recognition processing
             small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
@@ -181,13 +181,10 @@ while True:
                         cv2.imwrite('intruder.jpg', frame)
                         send_an_email('intruder.jpg')
                         count=+1
-                        
-                    
-#                    print(matches) 
+                    #print(matches) 
                     owner_detected = match_control_led(matches)
                     
             process_this_frame = not process_this_frame
-
 
             # Display the results
             for (top, right, bottom, left), name in zip(face_locations, face_names):
@@ -201,7 +198,9 @@ while True:
                 cv2.rectangle(frame, (left, top), (right, bottom), (226, 204, 249), 2)
 
                 # Draw a label with a name below the face
+                # Lable
                 cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (226, 204, 249), cv2.FILLED)
+                # Name
                 font = cv2.FONT_HERSHEY_DUPLEX
                 cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
 
@@ -212,7 +211,7 @@ while True:
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
             if owner_detected:
-                print("Welcome Back Home!!!!!!!!!!!!!!!!!!!!")
+                print("Welcome Back Home!")
                 break
             else:
                 red.on()
