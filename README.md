@@ -25,7 +25,7 @@ else:                                                      #No face detected wit
    #Take a photo named "image.jpg" and saved in "/pi/home"
 
 ## 2. Install dlib, opencv, facial_recognition, numpy
-   ---------- install necessary libs for dlib, opencv ----------- 
+   1. Install necessary libs for dlib, opencv
    $sudo apt-get update
    $sudo apt-get install build-essential \
     cmake \
@@ -48,17 +48,17 @@ else:                                                      #No face detected wit
     python3-numpy \
     python3-pip \
     zip
-   ----------- install lib for raspberry camera ----------- 
+   2. Install lib for raspberry camera 
    $sudo apt-get install python3-picamera
    $sudo pip3 install --upgrade picamera[array]
-   ----------- install dlib ----------- 
+   3. Install dlib
    $mkdir -p dlib
    $git clone -b 'v19.6' --single-branch https://github.com/davisking/dlib.git dlib/
    $cd ./dlib
    $sudo python3 setup.py install --compiler-flags "-mfpu=neon"
-   ----------install numpy----------- 
+   4. install numpy 
    $sudo pip3 install numpy
-   ----------install opencv----------- 
+   5. install opencv 
 1. Install necessary libs for opencv
    $sudo apt-get install build-essential git cmake pkg-config -y
    $sudo apt-get install libjpeg8-dev -y
