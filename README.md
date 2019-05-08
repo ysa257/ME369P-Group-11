@@ -26,6 +26,7 @@ else:                                                      #No face detected wit
 
 ## 2. Install dlib, opencv, facial_recognition, numpy
    1. Install necessary libs for dlib, opencv
+   
       $sudo apt-get update
       $sudo apt-get install build-essential \
        cmake \
