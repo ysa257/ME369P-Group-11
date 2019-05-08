@@ -5,8 +5,9 @@
 2. Real-time facial recognition between stored photo and camera
 3. a) If a stranger is detected it will alarm and email a picture to the homeowner \
    b) If homeowner is detected, unlock the door 
+   
 ## Syetem Structure:
-Note: Since we don't have a real door, we will use green LED turned on as unlocking the door and red LED on as alarming.
+Note: Since we don't have a real door, we will use green LED turned on as unlocking the door and red LED on as locking.
 
 When there's no one touching the sensor, the touch sensor is always running to wait for a touch
 Once touch sensed, camera begins to work and detect whether you are the houseowner(s) for 30 secs
