@@ -16,8 +16,7 @@ if detected: \
    - if strangers:  \
       -- red LED on \
       -- send a photo of the stranger to houseowners' e-mail \
-#No face detected within 30 secs \
-else:                                                     
+elif no face detected within 30 secs:                                                     
    -- camera stop running                                     
 ## 1. Test the camera whether it works 
    $vcgencmd get_camera \
