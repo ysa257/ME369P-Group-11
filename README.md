@@ -99,6 +99,7 @@ Program Capabilities:
 Syetem Structure:
 Note: Since we don't have a real door, we will use green LED turned on as unlocking the door and red LED on as alarming.
 
+When there's no one touching the sensor, the touch sensor is always running to wait for a touch
 Once touch sensed, camera begins to work and detect whether you are the houseowner(s) for 30 secs
 if detected:
    if the houseowners:
@@ -106,6 +107,6 @@ if detected:
    if strangers: 
       red LED on
       send a photo of the stranger to houseowners' e-mail
-else:            # No face detected within 30 secs
-   camera stop running
+else:                                                      # No face detected within 30 secs
+   camera stop running                                     # To save energy and increase running speed
 
