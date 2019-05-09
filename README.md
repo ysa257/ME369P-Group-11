@@ -90,9 +90,9 @@ elif no face detected within 30 secs:
       make 
 
 Note: Before installing dlib & opencv, we need to increase swap file size to 1024 and expand filesystem first. \
-5. for sending emails:
-   import email
-   import smtplib
+5. for sending emails: \
+   import email \
+   import smtplib \
    
 ## 3. Run the example code on github(facial_recognition)
 ## 4. Add touch sensor, LED and connect wires
